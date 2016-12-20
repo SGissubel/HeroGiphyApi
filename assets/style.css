@@ -1,0 +1,10 @@
+body {
+	padding: 5px 25px;
+}
+.btn {
+	padding: 5px;
+	margin-left: 5px;
+}
+#hero-search {
+	text-align: right;
+}
