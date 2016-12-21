@@ -19,8 +19,8 @@ $(document).ready(function(){
 		}).done(function(response){
 			var results = response.data;
 			for (var j = 0; j < results.length; j++) {
-				var div = $("<div>");
-				var rated = response.rating;
+				var div = $("<div>").addClass('images');
+				var rated = results[j].rating;
 				var gifAnimated = results[j].images.fixed_width.url;
 	         	var gifStill = results[j].images.fixed_width_still.url;
 	         	var p = $('<p>').text('Rating: ' + rated);
@@ -30,6 +30,19 @@ $(document).ready(function(){
 	         	div.append(gifs);
 	         	$('#hero-gifs').prepend(div);
 	         }//end for loop
+
+	         //gif click to change still to animate
+	         $('.gif').on('click', function(){
+	         	var state = $(this).attr("data-state");
+	         	
+	         	if(state === 'still') {
+	         		$(this).attr("src", $(this).data("animate"));
+	         		$(this).attr("data-state", "animate");
+	         	} else {
+	         		$(this).attr("src", $(this).data("still"));
+	         		$(this).attr("data-state", "still");
+	         	}
+	         });//end gif onclick.
 	});//end done function response
 		
 
@@ -66,17 +79,6 @@ $(document).ready(function(){
 
 	})//end hero add button
 
-	$('.gif').on('click', function(){
-		var state = $(this).attr("data-state");
-		
-		if(state === 'still'){
-			$(this).attr("src", $(this).data("animate"));
-			$(this).attr("data-state", "animate");
-		} else {
-			$(this).attr("src", $(this).data("still"));
-			$(this).attr("data-state", "still");
-		}
-	});
 
 $(document).on("click", ".btn", displayGif);
 	
@@ -88,6 +90,7 @@ createGif();
 	$('.btn').on("click", function clear(){
 		$('#hero-gifs').html('');
 		})
+
 
 
 

@@ -1,10 +1,42 @@
+* {
+	box-sizing: border-box;
+}
+
 body {
+	background:  linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)), url("background.jpg");
 	padding: 5px 25px;
+}
+label {
+	color: white;
 }
 .btn {
 	padding: 5px;
-	margin-left: 5px;
+	margin-left: 15px;
+}
+#buttons{
+	text-align: center;
 }
 #hero-search {
-	text-align: right;
+	text-align: center;
+	padding-top: 7%;
+	padding-bottom: 5%;
+}
+#add-hero{
+	padding: 5px;
+	margin-left: 1%;
+}
+.gif{
+	height: 200px;
+}
+.images:nth-child(odd){
+	margin-right: 0;
+	float: right;
+}
+
+.bodyContainer {
+	max-width: 1000px;
+	margin: 0 auto;
+}
+.gifCont {
+	max-width: 90%;
 }
