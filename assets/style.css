@@ -8,6 +8,8 @@ body {
 }
 label {
 	color: white;
+	font-family: "Cousine", "Times New Roman", serif;
+	font-size: 24px;
 }
 .jumbotron {
 	background: rgba(70,85,146, .5);
