@@ -1,6 +1,6 @@
 $(document).ready(function(){
 
-	var topics = ["superman", "batman", "spiderman", "wolverine", "captain america", "the hulk", "the flash", "aquaman"];
+	var topics = ["Superman", "Batman", "Spiderman", "Wolverine", "Captain America", "The Hulk", "The Flash", "Aquaman"];
 
 	
 	//generating gifs
@@ -61,19 +61,18 @@ $(document).ready(function(){
 
 	//add button function
 	$('#add-hero').on("click", function(event) {
-		
 		event.preventDefault();
 
 		var hero = $('#hero-input').val().trim();
 		 topics.push(hero);
 
- 
+		$('#hero-input').val('');
+
 		 createGif();
 	
 	//clears section after button add click
 	$('.btn').on("click", function clear(){
 		$('#hero-gifs').html('');
-		debugger;
 		})
 	 
 
